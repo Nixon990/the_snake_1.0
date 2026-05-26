@@ -79,6 +79,7 @@ class Apple(GameObject):
 
 class Snake(GameObject):
     """Класс Змейки"""
+
     def __init__(self):
         """Инициализация змейки"""
         super().__init__()
@@ -97,12 +98,12 @@ class Snake(GameObject):
         """Логика движения змейки"""
         head_x, head_y = self.get_head_position()
         dx, dy = self.direction
-        new_head = (
+        new_box = (
             (head_x + dx * GRID_SIZE) % SCREEN_WIDTH,
             (head_y + dy * GRID_SIZE) % SCREEN_HEIGHT
         )
 
-        self.positions.insert(0, new_head)
+        self.positions.insert(0, new_box)
         self.last = self.positions.pop()
 
     def grow(self):
