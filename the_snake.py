@@ -96,6 +96,7 @@ class Apple(GameObject):
                 return position
 
     def spawn(self, snake_positions):
+        """Рандомное перемещение яблока в свободную клетку."""
         self.position = self.randomize_position(snake_positions)
 
     def draw(self):
